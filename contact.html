@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html" class="home-arrow" title="Back to Home">
+    ←
+</a>
+    <h1>Contact Loom & Loop</h1>
+
+    <form id="contactForm" action="https://formsubmit.co/ajax/bvivaan2015@gmail.com" method="POST">
+
+    <input type="hidden" name="_subject" value="New Loom & Loop Customer Message!">
+
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Your Message:</label><br>
+    <textarea name="message" rows="5" cols="30" required></textarea><br><br>
+
+    <button type="submit">Send</button>
+    </form>
+
+<p id="formStatus"></p>
+
+    
+
+<footer>
+    <h2>Contact us now!</h2>
+    <button class="email-button"><p>Email: Himanigupta159@yahoo.com</p></button>
+    <p>Instagram page</p>
+    <button class="instagram-button"><p><a href="https://www.instagram.com/loomloop2026" target="_blank">Instagram</a></p></button>
+</footer>
+<div id="successPopup" class="popup">
+    <div class="popup-content">
+        <h2>🎉 Thank You!</h2>
+        <p>Your response is recorded.</p>
+        <button onclick="document.getElementById('successPopup').style.display='none'">
+            Close
+        </button>
+    </div>
+</div>
+<script>
+const contactForm = document.getElementById("contactForm");
+const successPopup = document.getElementById("successPopup");
+
+contactForm.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const formData = {
+        name: contactForm.elements["name"].value,
+        email: contactForm.elements["email"].value,
+        message: contactForm.elements["message"].value,
+        _subject: "New Loom & Loop Customer Message!",
+        _captcha: "false"
+    };
+
+    try {
+        const response = await fetch(contactForm.action, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            successPopup.style.display = "flex";
+            contactForm.reset();
+        } else {
+            alert("Unable to send your message. Please try again.");
+            console.log(result);
+        }
+
+    } catch (error) {
+        console.error(error);
+        alert("Connection error. Please try again.");
+    }
+});
+</script>
+</body>
+
+</html>

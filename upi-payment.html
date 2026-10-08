@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UPI Payment | Loom & Loop</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="checkout-header">
+
+    <h1>Loom & Loop</h1>
+
+    <p>Made Again. Made Better.</p>
+
+</header>
+
+<section class="upi-container">
+
+    <div class="upi-card">
+
+        <h2>Complete Your Payment</h2>
+
+        <p class="upi-text">
+
+            Scan the QR Code using any UPI app.
+
+        </p>
+
+        <img src="Screenshot 2026-10-08 at 8.53.12 PM.png"
+             alt="UPI QR Code"
+             class="qr-image">
+
+        
+
+        
+
+<div class="utr-section">
+
+    <h3>UPI Transaction ID (UTR)</h3>
+
+    <input
+        type="text"
+        id="utr"
+        placeholder="Enter your UPI Transaction ID"
+        autocomplete="off"
+    >
+
+    <p id="utrError" class="utr-error"></p>
+
+</div>
+
+        <div class="payment-note">
+
+            <p>🔒 Secure UPI Payment</p>
+
+            <p>📦 Your order will be processed after payment.</p>
+
+        </div>
+
+        <button id="paidButton">
+        Verify Payment & Submit Order
+        </button>
+
+    </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+<a href="payment.html" class="home-arrow" title="Back to Payment">←</a>
+</html>

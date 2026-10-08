@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Loom & Loop</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="checkout-header">
+
+    <h1>Loom & Loop</h1>
+
+    <p>Made Again. Made Better.</p>
+
+</header>
+
+<section class="checkout-container">
+
+    <!-- Customer Details -->
+
+    <div class="checkout-form">
+
+        <h2>Shipping Details</h2>
+
+        <form id="checkoutForm">
+
+            <label>Full Name</label>
+            <input type="text" id="fullName" required>
+
+            <label>Email Address</label>
+            <input type="email" id="email" required>
+
+            <label>Phone Number</label>
+            <input type="tel" id="phone" required>
+
+            <label>Delivery Address</label>
+            <textarea id="address" rows="4" required></textarea>
+
+            
+            <button type="submit" id="placeOrderBtn">
+                Proceed to Payment →
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Order Summary -->
+
+    <div class="order-summary">
+
+        <h2>Your Order</h2>
+
+        <ul id="checkoutItems"></ul>
+
+        <hr>
+
+        <h3>Total: ₹<span id="checkoutTotal">0</span></h3>
+
+        <div class="delivery-box">
+
+            <h4>🚚 Delivery Information</h4>
+
+            <p>Estimated Delivery:</p>
+
+            <strong>3–7 Working Days</strong>
+
+            <br><br>
+
+            <p>✔ Secure Packaging</p>
+
+            <p>✔ Handmade with Care</p>
+
+            <p>✔ Eco-Friendly Packaging</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+<a href="shopnow.html" class="home-arrow" title="Back to Shop">←</a>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Wishlist - Loom & Loop</title>
+
+<style>
+body {
+    background: #fff4e6;
+    color: #5b3924;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.product {
+    background: white;
+    display: inline-block;
+    width: 230px;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px #ddd;
+    position: relative;
+}
+
+.product img {
+    width: 180px;
+    height: 160px;
+    object-fit: contain;
+}
+
+.remove {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #b33a3a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>❤️ My Wishlist</h1>
+
+<div id="wishlistProducts"></div>
+
+<a href="index.html">← Back to Home</a>
+
+<script>
+function displayWishlist() {
+    const container = document.getElementById("wishlistProducts");
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    container.innerHTML = "";
+
+    if (wishlist.length === 0) {
+        container.innerHTML = "<h3>Your Wishlist is empty ❤️</h3>";
+        return;
+    }
+
+    wishlist.forEach((item, index) => {
+        const product = document.createElement("div");
+        product.className = "product";
+
+        const image = document.createElement("img");
+        image.src = item.image;
+        image.alt = item.name;
+
+        const title = document.createElement("h3");
+        title.textContent = item.name;
+
+        const price = document.createElement("p");
+        price.textContent = item.price;
+
+        const remove = document.createElement("button");
+        remove.className = "remove";
+        remove.textContent = "✕";
+
+        remove.onclick = () => {
+            const updated = JSON.parse(localStorage.getItem("wishlist")) || [];
+            updated.splice(index, 1);
+            localStorage.setItem("wishlist", JSON.stringify(updated));
+            displayWishlist();
+        };
+
+        product.append(remove, image, title, price);
+        container.appendChild(product);
+    });
+}
+
+displayWishlist();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Order Confirmed | Loom & Loop</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="checkout-header">
+
+    <h1>Loom & Loop</h1>
+
+    <p>Made Again. Made Better.</p>
+
+</header>
+
+<section class="thankyou-container">
+
+    <div class="thankyou-card">
+
+        <div class="success-icon">
+            ✅
+        </div>
+
+        <h2 id="thankYouMessage">
+            Thank You!
+        </h2>
+
+        <p class="thank-text">
+
+            Your order has been placed successfully.
+
+        </p>
+
+        <div class="order-box">
+
+            <h3>Order ID</h3>
+
+            <p id="orderId"></p>
+
+        </div>
+
+        <div class="delivery-box">
+
+            <h3>Estimated Delivery</h3>
+
+            <p>🚚 3–7 Working Days</p>
+
+        </div>
+
+        <div class="thank-note">
+
+            🌿 Thank you for supporting sustainable fashion and handmade craftsmanship. Every purchase helps reduce textile waste and supports Loom & Loop.
+
+        </div>
+
+        <div class="thank-buttons">
+
+            <a href="shopnow.html" class="thank-btn">
+
+                Continue Shopping
+
+            </a>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7L0RqIKspyR_KYIeiY8KSj0P_XRAWpwQMd9YJeTnSsHho5g/viewform?usp=header
+" class="thank-btn secondary">
+
+                Leave Feedback
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+
+<script>
+
+const customerName = localStorage.getItem("customerName");
+
+if (customerName) {
+    document.getElementById("thankYouMessage").textContent =
+        "🎉 Thank You, " + customerName + "!";
+}
+
+const newOrderId =
+    "LL" + Math.floor(100000 + Math.random() * 900000);
+
+document.getElementById("orderId").textContent = newOrderId;
+
+</script>
+
+</body>
+<div class="thankyou-icons">
+    <a href="upi-payment.html" class="home-arrow">←</a>
+    <a href="index.html" class="home-arrow">⌂</a>
+</div>
+</html>

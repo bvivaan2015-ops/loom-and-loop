@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment | Loom & Loop</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="checkout-header">
+
+    <h1>Loom & Loop</h1>
+
+    <p>Made Again. Made Better.</p>
+
+</header>
+
+<section class="payment-container">
+
+    <!-- LEFT SIDE -->
+
+    <div class="payment-card">
+
+        <h2>Choose Payment Method</h2>
+
+        <div class="payment-option">
+
+            <label>
+
+                <input type="radio"
+                       name="payment"
+                       value="online"
+                       checked>
+
+                💳 Pay Online
+            </label>
+
+            <p>
+                UPI • Google Pay • PhonePe • Paytm • Cards
+            </p>
+
+        </div>
+
+        <div class="payment-option">
+
+            <label>
+
+                <input type="radio"
+                       name="payment"
+                       value="cod">
+
+                💵 Cash on Delivery
+            </label>
+
+            <p>
+                Pay when your order reaches your home.
+            </p>
+
+        </div>
+
+        <div class="payment-info">
+
+            <p>🔒 100% Secure Payments</p>
+
+            <p>🚚 Delivery in 3–7 Working Days</p>
+
+            <p>♻️ Every order supports sustainable fashion.</p>
+
+        </div>
+
+        <button id="continuePayment">
+
+            Proceed to Payment →
+
+        </button>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+
+    <div class="payment-summary">
+
+        <h2>Your Order</h2>
+
+        <ul id="paymentItems"></ul>
+
+        <hr>
+
+        <h3>
+
+            Total : ₹<span id="paymentTotal">0</span>
+
+        </h3>
+
+        <div class="summary-box">
+
+            <h4>Why Shop With Us?</h4>
+
+            <p>🌿 Handmade with Care</p>
+
+            <p>♻️ Eco-Friendly Products</p>
+
+            <p>💚 Thank you for supporting Loom & Loop.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init("w15eIwZrEj2fAAo7X");
+</script>
+
+<script src="script.js"></script>
+
+</body>
+<a href="checkout.html" class="home-arrow" title="Back to Checkout">←</a>
+</html>
